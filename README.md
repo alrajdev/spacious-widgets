@@ -85,8 +85,12 @@ Column(
 )  
 ```  
 
-![](spacious_widgets example screenshot.png)
+![](screenshot.png)
 
-##Development
+## License
+
+MIT
+
+## Development
 
 Please raise an issue if you found any problem, or have any features or optimization ideas. I'm happy to learn and co-operate.
