@@ -1,0 +1,1 @@
+Example application for spacious_widgets
