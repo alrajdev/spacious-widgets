@@ -1,6 +1,6 @@
 name: spacious_widgets
-description: Inserts SizedBox between children widgets
-version: 1.0.0
+description: A library to insert SizedBox for space between every child in Column, Row, or any List<Widget>
+version: 1.0.1
 homepage: https://github.com/alraj-dev/spacious_widgets
 
 environment:

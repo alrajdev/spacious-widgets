@@ -75,9 +75,10 @@ extension SpaciousChildren on List<Widget> {
       // start is set
       if (start != null)
         SizedBox(
-          height: height?.getOverrideAdjustment(start),
-          width: width?.getOverrideAdjustment(start),
+          height: height?.other(start),
+          width: width?.other(start),
         ),
+
       // always add first widget
       first
     ];
@@ -160,8 +161,8 @@ extension SpaciousChildren on List<Widget> {
     if (end != null) {
       spacedWidgets.add(
         SizedBox(
-          height: height?.getOverrideAdjustment(end),
-          width: width?.getOverrideAdjustment(end),
+          height: height?.other(end),
+          width: width?.other(end),
         ),
       );
     }

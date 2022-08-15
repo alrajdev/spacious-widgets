@@ -1,3 +1,6 @@
+## 1.0.1
+* Fix **'BoxConstraints has negative minimum width (or height)'** error when using smaller values than `height`/`width` in `start` and `end` parameter 
+
 ## 1.0.0
 
 * Add `SizedBox` between every widget in a `List<Widget>`
