@@ -8,6 +8,13 @@ dependencies:
  spacious_widgets: 1.0.0
  ```  
 
+## Features
+
+* Single extension function to add SizedBox between every widgets in a `List`
+* Adjust any single inserted `SizedBox`
+* Ignore `SizedBox` anywhere
+* Doesn't insert `SizedBox` around `Spacer` widget
+
 ## Usage
 
 ```dart  
@@ -94,4 +101,4 @@ MIT
 
 ## Development
 
-Please raise an issue if you found any problem, or have any features or optimization ideas. I'm happy to learn and co-operate.
+Please raise an issue if you found any problems, have any features or optimization ideas in the ![Github Repository](https://github.com/alraj-dev/spacious_widgets). I'm happy to learn and co-operate.

@@ -1,3 +1,6 @@
+## 1.1.0
+* Don't insert `SizedBox` around `Spacer` widget
+
 ## 1.0.1
 * Fix **'BoxConstraints has negative minimum width (or height)'** error when using smaller values than `height`/`width` in `start` and `end` parameter 
 

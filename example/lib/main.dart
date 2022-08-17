@@ -44,30 +44,26 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text(title),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            // start adds SizedBox here
-            item(1),
-            item(2),
-            const AdjustSpace(
-                adjust: 5), // increase 5 to the given height/width
-            item(3),
-            const AdjustSpace(
-                adjust: -5), // decrease 5 to the given height/width
-            item(4),
-            const NoSpace(), // add no SizedBox here
-            item(5),
-            const AdjustSpace(
-                override: 15), // override the given height/width with 15
-            item(6),
-            item(7),
-            item(8),
-            item(9),
-            item(10),
-            // end adds SizedBox here
-          ].setSpace(start: 15, height: 10, end: 15), // use width for Row
-        ),
+      body: Column(
+        children: [
+          // start adds SizedBox here
+          item(1),
+          item(2),
+          const AdjustSpace(adjust: 5), // increase 5 to the given height/width
+          item(3),
+          const AdjustSpace(adjust: -5), // decrease 5 to the given height/width
+          item(4),
+          const NoSpace(), // add no SizedBox here
+          item(5),
+          const AdjustSpace(
+              override: 15), // override the given height/width with 15
+          item(6),
+          item(7),
+          item(8),
+          item(9),
+          item(10),
+          // end adds SizedBox here
+        ].setSpace(start: 15, height: 10, end: 15), // use width for Row
       ),
     );
   }

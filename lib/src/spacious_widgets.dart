@@ -89,13 +89,13 @@ extension SpaciousChildren on List<Widget> {
       // adjustments from default height/width
       double adjustment = 0.0;
 
-      // flag to ignore SizedBoxes when using NoSpace
-      bool noSpace = false;
+      // flag to ignore SizedBox when using NoSpace and Spacer
+      bool ignoreSpace = false;
 
       // loop from the second widget
       for (final widget in sublist(1)) {
-        // add SizedBox only if the previous widget is not NoSpace
-        if (!noSpace) {
+        // add SizedBox only if the previous widget was not NoSpace or Spacer
+        if (!ignoreSpace) {
           // widget is for adjusting default height/width
           if (widget is AdjustSpace) {
             // overriding is set
@@ -116,44 +116,55 @@ extension SpaciousChildren on List<Widget> {
           // widget is for ignoring SizedBox
           else if (widget is NoSpace) {
             // flag for next loop to ignore next SizedBox too
-            noSpace = true;
+            ignoreSpace = true;
 
             // don't add NoSpace, since it is only for setSpace
             continue;
           }
 
-          SizedBox? sizedBox;
+          // flag for next loop to ignore next SizedBox too
+          // we need to add Spacer, cannot `continue` to next loop
+          ignoreSpace = widget is Spacer;
 
-          // pool has SizedBox
-          if (pool.containsKey(adjustment)) {
-            sizedBox = pool[adjustment];
-          }
-          // pool doesn't have SizedBox
-          else {
-            sizedBox = _getSizedBox(
-              height: height,
-              width: width,
-              adjustment: adjustment,
-            );
-          }
+          // this flag is only set for Spacer
+          // since NoSpace widget continues to next loop, doesn't reach here
+          if (!ignoreSpace) {
+            SizedBox? sizedBox;
 
-          // we have a SizedBox for the space
-          if (sizedBox != null) {
-            // add SizedBox to pool
-            pool[adjustment] = sizedBox;
+            // pool has SizedBox
+            if (pool.containsKey(adjustment)) {
+              sizedBox = pool[adjustment];
+            }
+            // pool doesn't have SizedBox
+            else {
+              sizedBox = _getSizedBox(
+                height: height,
+                width: width,
+                adjustment: adjustment,
+              );
+            }
 
-            // add the SizedBox
-            spacedWidgets.add(sizedBox);
+            // we have a SizedBox for the space
+            if (sizedBox != null) {
+              // add SizedBox to pool
+              pool[adjustment] = sizedBox;
+
+              // add the SizedBox
+              spacedWidgets.add(sizedBox);
+            }
           }
         }
 
-        // add the widget
+        // add the actual widget
         spacedWidgets.add(widget);
 
-        // reset adjustments and noSpace
+        // reset adjustments
         // so next SizedBox isn't affected
         adjustment = 0.0;
-        noSpace = false;
+
+        // reset to false for NoSpace
+        // for Spacer, setting flag for next loop to ignore next SizedBox
+        ignoreSpace = widget is Spacer;
       }
     }
 
