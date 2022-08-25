@@ -1,3 +1,6 @@
+## 1.1.0+1
+* Fix Readme in pub.dev
+
 ## 1.1.0
 * Don't insert `SizedBox` around `Spacer` widget
 

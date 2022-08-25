@@ -5,7 +5,7 @@ A library to insert `SizedBox` between every children widget in Column, Row, and
 #Add dependency
 ```yaml  
 dependencies:  
- spacious_widgets: 1.0.0
+ spacious_widgets: 1.1.0+1
  ```  
 
 ## Features
