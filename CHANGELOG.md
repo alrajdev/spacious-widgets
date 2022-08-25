@@ -1,3 +1,6 @@
+## 1.1.0+2
+* Add pub.dev link to Readme for repo
+
 ## 1.1.0+1
 * Fix Readme in pub.dev
 
