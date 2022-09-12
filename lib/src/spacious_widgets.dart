@@ -48,18 +48,15 @@ extension SpaciousChildren on List<Widget> {
   }) {
     // return if empty
     if (isEmpty) return this;
-
-    assert(!(height == null && width == null),
+    assert(height != null || width != null,
         "setSpace: Both height and width cannot be null");
-    assert(!(height != null && width != null),
+    assert(height == null || width == null,
         "setSpace: Both height and width cannot have value");
-    assert(!(height != null && height < 0.0),
-        "setSpace: height cannot be negative");
     assert(
-        !(width != null && width < 0.0), "setSpace: width cannot be negative");
-    assert(
-        !(start != null && start < 0.0), "setSpace: start cannot be negative");
-    assert(!(end != null && end < 0.0), "setSpace: end cannot be negative");
+        height == null || height >= 0.0, "setSpace: height cannot be negative");
+    assert(width == null || width >= 0.0, "setSpace: width cannot be negative");
+    assert(start == null || start >= 0.0, "setSpace: start cannot be negative");
+    assert(end == null || end >= 0.0, "setSpace: end cannot be negative");
 
     // pool for reusing SizedBox
     final pool = {

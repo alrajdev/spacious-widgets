@@ -1,13 +1,13 @@
-A library to insert `SizedBox` between every children widget in Column, Row, and any List of widgets.
+A flutter library to insert `SizedBox` between every children widget in Column, Row, and any List of widgets.
 
 ## Getting started
 
-Visit this library in ![pub.dev](https://pub.dev/packages/spacious_widgets)
+Visit this library in [pub.dev](https://pub.dev/packages/spacious_widgets)
 
 #Add dependency
 ```yaml  
 dependencies:  
- spacious_widgets: ^1.1.0+2
+ spacious_widgets: ^1.1.0+3
  ```  
 
 ## Features

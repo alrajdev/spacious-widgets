@@ -23,11 +23,11 @@ class AdjustSpace extends SizedBox {
   ///)
   ///```
   const AdjustSpace({this.override, this.adjust, Key? key})
-      : assert(!(adjust == null && override == null),
+      : assert(adjust != null || override != null,
             "Both adjust and override cannot be null"),
-        assert(!(adjust != null && override != null),
+        assert(adjust == null || override == null,
             "Both adjust and override cannot have value"),
-        assert(!(override != null && override < 0.0),
-            "override cannot be negative"),
+        assert(
+            override == null || override >= 0.0, "override cannot be negative"),
         super(key: key);
 }

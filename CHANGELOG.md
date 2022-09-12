@@ -1,3 +1,7 @@
+## 1.1.0+3
+* Fix pub.dev link in Readme
+* change assert conditions to actual assert like conditions 
+
 ## 1.1.0+2
 * Add pub.dev link to Readme for repo
 
